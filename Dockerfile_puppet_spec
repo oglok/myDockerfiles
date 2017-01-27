@@ -1,0 +1,14 @@
+#######################################
+# Rickys Dockerfile
+########################################
+# 
+
+FROM centos:latest
+MAINTAINER Ricardo Noriega De Soto <rnoriega@redhat.com >
+LABEL version="0.1" description="Test Container"
+
+# Packaged dependencies
+RUN yum update -y && \
+yum install git -y && \
+yum install bundle rubygem-bundler ruby-devel zlib-devel -y && \
+yum groupinstall "Development Tools" -y 
